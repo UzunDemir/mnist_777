@@ -145,10 +145,10 @@ model = tf.keras.models.load_model('mnist_cnn_model.h5')
 def preprocess_canvas_image(image_data):
     img = Image.fromarray((image_data * 255).astype('uint8')).convert('L')
     img = ImageOps.invert(img)  # Инвертируем цвета, чтобы цифра была черной на белом фоне
-    img = img.resize((28, 28))
+    img = img.resize((28, 28), Image.LANCZOS)
     
     # Обработка изображения для нормализации размера и центрирования
-    img = ImageOps.fit(img, (28, 28), Image.ANTIALIAS)
+    img = ImageOps.fit(img, (28, 28), method=Image.LANCZOS)
     img_array = np.array(img) / 255.0
     
     # Убедимся, что у изображения правильный формат
