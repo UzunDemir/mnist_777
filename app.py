@@ -55,7 +55,7 @@ def preprocess_image(image):
 # Streamlit App
 st.title('MNIST Digit Classifier')
 
-uploaded_image = drawn_image #st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
+uploaded_image = image_data #st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
     image = uploaded_image #Image.open(uploaded_image)
