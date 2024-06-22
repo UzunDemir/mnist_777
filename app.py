@@ -82,7 +82,7 @@ import matplotlib.pyplot as plt
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
-stroke_width = 12
+stroke_width = 15
 stroke_color = "black"  # Устанавливаем черный цвет для контура
 bg_color = "white"  # Устанавливаем белый цвет фона
 bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
