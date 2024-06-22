@@ -34,7 +34,7 @@ if canvas_result.image_data is not None:
 # Кнопка для сохранения нарисованного изображения
 if st.button("Сохранить изображение"):
     # Преобразуем массив данных изображения в объект PIL Image
-    drawn_image = Image.fromarray(canvas_result.image_data.astype('uint8'))
+    drawn_image = drawn_image.fromarray(canvas_result.image_data.astype('uint8'))
 
     # Сохраняем изображение в файл (вы можете указать свой путь и формат)
     drawn_image.save("нарисованное_изображение.png")
