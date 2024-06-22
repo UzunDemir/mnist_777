@@ -210,7 +210,7 @@ model = tf.keras.models.load_model('mnist_cnn_model.h5')
 # Функция для предобработки изображения с холста
 def preprocess_canvas_image(image_data):
     img = Image.fromarray((image_data * 255).astype('uint8'))
-    img = img.convert('L')  # Преобразование в оттенки серого
+    #img = img.convert('L')  # Преобразование в оттенки серого
     resized_image = img.resize((28, 28), Image.Resampling.BILINEAR)
     grayscaled_image = resized_image.convert("L")
     inverted_image = 255 - np.array(grayscaled_image)
