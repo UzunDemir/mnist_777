@@ -38,22 +38,18 @@ if st.button("Сохранить изображение"):
     drawn_image.save("нарисованное_изображение.png")
     st.success("Изображение успешно сохранено!")
 
-# Загрузка предварительно обученной модели
-model = tf.keras.models.load_model('mnist_cnn_model.h5')
-
-# Функция для предобработки загруженного изображения
+# Function to preprocess the uploaded image
 def preprocess_image(image):
     img = Image.open(image)
-    img = img.convert('L')  # Преобразование в оттенки серого
+    img = img.convert('L')  # Convert to grayscale
     img = img.resize((28, 28))
     img_array = np.array(img) / 255.0
     img_array = img_array.reshape((1, 28, 28, 1))
     return img_array
-
 # Streamlit App
 st.title('MNIST Digit Classifier')
 
-uploaded_image = st.file_uploader("Загрузите изображение с цифрой (формат MNIST)", type=["jpg", "jpeg", "png"])
+uploaded_image = st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
@@ -61,19 +57,19 @@ if uploaded_image is not None:
 
     with col1:
         resized_img = image.resize((150, 150))
-        st.image(resized_img, caption='Загруженное изображение (Измененный размер)', use_column_width=True)
+        st.image(resized_img, caption='Uploaded Image (Resized)', use_column_width=True)
 
     with col2:
         st.write("")
-        if st.button('Классифицировать', key='classify_btn'):
+        if st.button('Classify', key='classify_btn'):
             try:
-                # Предобработка загруженного изображения
+                # Preprocess the uploaded image
                 img_array = preprocess_image(uploaded_image)
 
-                # Предсказание с использованием предварительно обученной модели
+                # Make a prediction using the pre-trained model
                 result = model.predict(img_array)
                 predicted_class = np.argmax(result)
 
-                st.success(f'Предсказанная цифра: {predicted_class}')
+                st.success(f'Predicted Digit: {predicted_class}')
             except Exception as e:
-                st.error(f'Ошибка: {e}')
+                st.error(f'Error: {e}')
