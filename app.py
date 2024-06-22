@@ -58,7 +58,7 @@ st.title('MNIST Digit Classifier')
 uploaded_image = drawn_image #st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
-    image = Image.open(uploaded_image)
+    image = uploaded_image #Image.open(uploaded_image)
     col1, col2 = st.columns(2)
 
     with col1:
