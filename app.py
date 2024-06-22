@@ -4,8 +4,6 @@ import tensorflow as tf
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
-# Load the pre-trained model
-model = tf.keras.models.load_model('mnist_cnn_model.h5')
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
@@ -40,6 +38,9 @@ if st.button("Сохранить изображение"):
     # Сохраняем изображение в файл (вы можете указать свой путь и формат)
     drawn_image.save("нарисованное_изображение.png")
     st.success("Изображение успешно сохранено!")
+
+# Load the pre-trained model
+model = tf.keras.models.load_model('mnist_cnn_model.h5')
 
 # Function to preprocess the uploaded image
 def preprocess_image(image):
