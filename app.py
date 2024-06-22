@@ -72,7 +72,7 @@ def preprocess_canvas_image(image_data):
 #         st.success(f'Предсказанная цифра: {predicted_class}')
 #     except Exception as e:
 #         st.error(f'Ошибка: {e}')
-uploaded_image = img_array # st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
+uploaded_image = drawn_image # st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
