@@ -180,6 +180,8 @@ import matplotlib.pyplot as plt
 
 # Streamlit App
 st.title('Классификатор рукописных цифр MNIST')
+st.write("Протестируй работу MNIST!")
+st.write("Напиши одну цифру")
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
@@ -304,7 +306,7 @@ def preprocess_canvas_image(image_data):
 
 
 # Streamlit App
-st.title('MNIST Digit Classifier')
+#st.title('MNIST Digit Classifier')
 
 if st.button('Классифицировать нарисованную цифру'):
     try:
