@@ -263,5 +263,8 @@ if st.button('Классифицировать нарисованную цифр
 
         # Предсказание с использованием предварительно обученной модели
         result = model.predict(img_array)
-        pred
+        predicted_class = np.argmax(result)
 
+        st.success(f'Предсказанная цифра: {predicted_class}')
+    except Exception as e:
+        st.error(f'Ошибка: {e}')
