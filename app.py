@@ -4,6 +4,9 @@ import tensorflow as tf
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
+# Загрузка предварительно обученной модели
+model = tf.keras.models.load_model('mnist_cnn_model.h5')
+
 # Задаем параметры холста
 drawing_mode = "freedraw"
 stroke_width = 12
@@ -29,51 +32,20 @@ canvas_result = st_canvas(
 if canvas_result.image_data is not None:
     st.image(canvas_result.image_data)
 
-# Кнопка для сохранения нарисованного изображения
-if st.button("Сохранить изображение"):
-    # Преобразуем массив данных изображения в объект PIL Image
-    drawn_image = Image.fromarray((canvas_result.image_data * 255).astype('uint8'))
+# Кнопка для предсказания нарисованной цифры
+if st.button("Предсказать цифру"):
+    try:
+        # Преобразуем нарисованное изображение
+        img = Image.fromarray((canvas_result.image_data * 255).astype('uint8'))
+        img = img.convert('L')  # Преобразование в оттенки серого
+        img = img.resize((28, 28))
+        img_array = np.array(img) / 255.0
+        img_array = img_array.reshape((1, 28, 28, 1))
 
-    # Сохраняем изображение в файл (вы можете указать свой путь и формат)
-    drawn_image.save("нарисованное_изображение.png")
-    st.success("Изображение успешно сохранено!")
+        # Предсказание с использованием модели
+        result = model.predict(img_array)
+        predicted_class = np.argmax(result)
 
-# Загрузка предварительно обученной модели
-model = tf.keras.models.load_model('mnist_cnn_model.h5')
-
-# Функция для предобработки загруженного изображения
-def preprocess_image(image):
-    img = Image.open(image)
-    img = img.convert('L')  # Преобразование в оттенки серого
-    img = img.resize((28, 28))
-    img_array = np.array(img) / 255.0
-    img_array = img_array.reshape((1, 28, 28, 1))
-    return img_array
-
-# Streamlit App
-st.title('MNIST Digit Classifier')
-
-uploaded_image = st.file_uploader("Загрузите изображение с цифрой (формат MNIST)", type=["jpg", "jpeg", "png"])
-
-if uploaded_image is not None:
-    image = Image.open(uploaded_image)
-    col1, col2 = st.columns(2)
-
-    with col1:
-        resized_img = image.resize((150, 150))
-        st.image(resized_img, caption='Загруженное изображение (Измененный размер)', use_column_width=True)
-
-    with col2:
-        st.write("")
-        if st.button('Классифицировать', key='classify_btn'):
-            try:
-                # Предобработка загруженного изображения
-                img_array = preprocess_image(uploaded_image)
-
-                # Предсказание с использованием предварительно обученной модели
-                result = model.predict(img_array)
-                predicted_class = np.argmax(result)
-
-                st.success(f'Предсказанная цифра: {predicted_class}')
-            except Exception as e:
-                st.error(f'Ошибка: {e}')
+        st.success(f'Предсказанная цифра: {predicted_class}')
+    except Exception as e:
+        st.error(f'Ошибка: {e}')
