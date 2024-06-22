@@ -181,8 +181,8 @@ import matplotlib.pyplot as plt
 # Задаем параметры холста
 drawing_mode = "freedraw"
 stroke_width = 12
-stroke_color = "black"  # Устанавливаем черный цвет для контура
-bg_color = "white"  # Устанавливаем белый цвет фона
+stroke_color = "white"  # Устанавливаем черный цвет для контура
+bg_color = "black"  # Устанавливаем белый цвет фона
 bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
 realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
 
