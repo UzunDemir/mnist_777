@@ -60,15 +60,39 @@ def preprocess_canvas_image(image_data):
     img_array = img_array.reshape((1, 28, 28, 1))
     return img_array
 
-if st.button('Классифицировать нарисованную цифру'):
-    try:
-        # Предобработка изображения с холста
-        img_array = preprocess_canvas_image(canvas_result.image_data)
+# if st.button('Классифицировать нарисованную цифру'):
+#     try:
+#         # Предобработка изображения с холста
+#         img_array = preprocess_canvas_image(canvas_result.image_data)
 
-        # Предсказание с использованием предварительно обученной модели
-        result = model.predict(img_array)
-        predicted_class = np.argmax(result)
+#         # Предсказание с использованием предварительно обученной модели
+#         result = model.predict(img_array)
+#         predicted_class = np.argmax(result)
 
-        st.success(f'Предсказанная цифра: {predicted_class}')
-    except Exception as e:
-        st.error(f'Ошибка: {e}')
+#         st.success(f'Предсказанная цифра: {predicted_class}')
+#     except Exception as e:
+#         st.error(f'Ошибка: {e}')
+uploaded_image = img_array # st.file_uploader("Upload a digit image (MNIST format)", type=["jpg", "jpeg", "png"])
+
+if uploaded_image is not None:
+    image = Image.open(uploaded_image)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        resized_img = image.resize((150, 150))
+        st.image(resized_img, caption='Uploaded Image (Resized)', use_column_width=True)
+
+    with col2:
+        st.write("")
+        if st.button('Classify', key='classify_btn'):
+            try:
+                # Preprocess the uploaded image
+                img_array = preprocess_image(uploaded_image)
+
+                # Make a prediction using the pre-trained model
+                result = model.predict(img_array)
+                predicted_class = np.argmax(result)
+
+                st.success(f'Predicted Digit: {predicted_class}')
+            except Exception as e:
+                st.error(f'Error: {e}')
