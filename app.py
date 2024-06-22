@@ -1,62 +1,45 @@
-import streamlit as st
-import numpy as np
-import tensorflow as tf
+import pandas as pd
 from PIL import Image
+import streamlit as st
+from streamlit_drawable_canvas import st_canvas
 
-# Загрузка предобученной модели
-model = tf.keras.models.load_model('mnist_cnn_model.h5')
+# Specify canvas parameters in application
+# drawing_mode = st.sidebar.selectbox(
+#     "Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform")
+# )
+drawing_mode = "freedraw"
 
-# Функция для предобработки загруженного изображения
-def preprocess_image(image):
-    img = Image.open(image)
-    img = img.convert('L')  # Преобразование в оттенки серого
-    img = img.resize((28, 28))  # Изменение размера до 28x28
-    img_array = np.array(img) / 255.0  # Преобразование в массив и нормализация
-    img_array = img_array.reshape((1, 28, 28, 1))  # Изменение формы для модели CNN
-    return img_array
+#stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
+stroke_width = 12
+if drawing_mode == 'point':
+    point_display_radius = st.sidebar.slider("Point display radius: ", 1, 25, 3)
+stroke_color = "Stroke color hex: " #st.sidebar.color_picker("Stroke color hex: ")
+bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
+bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 
-# Заголовок и описание приложения
-st.title('Распознавание цифр MNIST')
-st.write('Нарисуйте цифру внизу на холсте, затем нажмите кнопку "Предсказать".')
+realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
-# Виджет для рисования на холсте
+    
+
+# Create a canvas component
 canvas_result = st_canvas(
-    fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
-    stroke_width=12,  # Ширина контура рисования
-    stroke_color="black",  # Цвет контура
-    background_color="white",  # Цвет фона холста
-    update_streamlit=True,  # Обновление холста в реальном времени
-    height=150,  # Высота холста
-    drawing_mode="freedraw",  # Режим рисования - свободное рисование
+    fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
+    stroke_width=stroke_width,
+    stroke_color=stroke_color,
+    background_color=bg_color,
+    background_image=Image.open(bg_image) if bg_image else None,
+    update_streamlit=realtime_update,
+    height=150,
+    drawing_mode=drawing_mode,
+    point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
     key="canvas",
 )
 
-# Проверяем, если ли данные изображения на холсте
+# Do something interesting with the image data and paths
 if canvas_result.image_data is not None:
     st.image(canvas_result.image_data)
-
-# Виджет для загрузки изображения для предсказания
-uploaded_image = st.file_uploader("Загрузите изображение цифры (формат MNIST)", type=["jpg", "jpeg", "png"])
-
-if uploaded_image is not None:
-    image = Image.open(uploaded_image)
-    col1, col2 = st.columns(2)
-
-    with col1:
-        resized_img = image.resize((150, 150))
-        st.image(resized_img, caption='Загруженное изображение (Измененный размер)', use_column_width=True)
-
-    with col2:
-        st.write("")
-        if st.button('Предсказать', key='classify_btn'):
-            try:
-                # Предобработка загруженного изображения
-                img_array = preprocess_image(uploaded_image)
-
-                # Предсказание с использованием предобученной модели
-                result = model.predict(img_array)
-                predicted_class = np.argmax(result)
-
-                st.success(f'Предсказанная цифра: {predicted_class}')
-            except Exception as e:
-                st.error(f'Ошибка: {e}')
+# if canvas_result.json_data is not None:
+#     objects = pd.json_normalize(canvas_result.json_data["objects"]) # need to convert obj to str because PyArrow
+#     for col in objects.select_dtypes(include=['object']).columns:
+#         objects[col] = objects[col].astype("str")
+#     st.dataframe(objects)
