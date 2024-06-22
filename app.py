@@ -178,6 +178,9 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+# Streamlit App
+st.title('Классификатор рукописных цифр MNIST')
+
 # Задаем параметры холста
 drawing_mode = "freedraw"
 stroke_width = 12
