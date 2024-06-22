@@ -6,7 +6,7 @@ from streamlit_drawable_canvas import st_canvas
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
-stroke_width = 12
+stroke_width = 20
 stroke_color = "white"  # Устанавливаем белый цвет для контура
 bg_color = "black"  # Устанавливаем черный цвет фона
 bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
