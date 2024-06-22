@@ -157,7 +157,7 @@ def preprocess_canvas_image(image_data):
 
 # Задаем параметры канвы
 drawing_mode = "freedraw"
-stroke_width = 12
+stroke_width = 10
 stroke_color = "white"  # Устанавливаем белый цвет для контура
 bg_color = "black"  # Устанавливаем черный цвет фона
 realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
