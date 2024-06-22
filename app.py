@@ -4,6 +4,9 @@ import tensorflow as tf
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
+# Load the pre-trained model
+model = tf.keras.models.load_model('mnist_cnn_model.h5')
+
 # Задаем параметры холста
 drawing_mode = "freedraw"
 stroke_width = 12
