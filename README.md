@@ -1,1 +1,1 @@
-# mnist_777
+# mnist
