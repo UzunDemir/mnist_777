@@ -20,8 +20,8 @@ canvas_result = st_canvas(
     background_color=bg_color,
     background_image=Image.open(bg_image) if bg_image else None,
     update_streamlit=realtime_update,
-    height=300,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
-    width=300,
+    height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
+    width=150,
     drawing_mode=drawing_mode,
     key="canvas",
 )
