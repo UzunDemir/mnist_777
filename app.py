@@ -32,20 +32,20 @@ canvas_result = st_canvas(
 if canvas_result.image_data is not None:
     st.image(canvas_result.image_data)
 
-# Кнопка для предсказания нарисованной цифры
-if st.button("Предсказать цифру"):
-    try:
-        # Преобразуем нарисованное изображение
-        img = Image.fromarray((canvas_result.image_data * 255).astype('uint8'))
-        img = img.convert('L')  # Преобразование в оттенки серого
-        img = img.resize((28, 28))
-        img_array = np.array(img) / 255.0
-        img_array = img_array.reshape((1, 28, 28, 1))
+# # Кнопка для предсказания нарисованной цифры
+# if st.button("Предсказать цифру"):
+#     try:
+#         # Преобразуем нарисованное изображение
+#         img = Image.fromarray((canvas_result.image_data * 255).astype('uint8'))
+#         img = img.convert('L')  # Преобразование в оттенки серого
+#         img = img.resize((28, 28))
+#         img_array = np.array(img) / 255.0
+#         img_array = img_array.reshape((1, 28, 28, 1))
 
-        # Предсказание с использованием модели
-        result = model.predict(img_array)
-        predicted_class = np.argmax(result)
+#         # Предсказание с использованием модели
+#         result = model.predict(img_array)
+#         predicted_class = np.argmax(result)
 
-        st.success(f'Предсказанная цифра: {predicted_class}')
-    except Exception as e:
-        st.error(f'Ошибка: {e}')
+#         st.success(f'Предсказанная цифра: {predicted_class}')
+#     except Exception as e:
+#         st.error(f'Ошибка: {e}')
