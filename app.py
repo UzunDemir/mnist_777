@@ -314,9 +314,8 @@ if canvas_result.image_data is not None:
 # Загрузка предварительно обученной модели
 model = tf.keras.models.load_model('mnist_cnn_model.h5')
 
-# Функция для предобработки изображения с холста
 def preprocess_canvas_image(image_data):
-    img = Image.fromarray((image_data * 255).astype('uint8'))
+    img = Image.fromarray(image_data)
     img = img.convert('L')  # Преобразование в оттенки серого
     resized_image = img.resize((28, 28), Image.BILINEAR)  # Изменение размера
     grayscaled_image = resized_image.convert("L")  # Преобразование в grayscale
