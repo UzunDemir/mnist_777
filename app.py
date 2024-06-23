@@ -312,8 +312,8 @@ canvas_result = st_canvas(
 #     st.image(canvas_result.image_data)
 
 # Загрузка предварительно обученной модели
-model = tf.keras.models.load_model('mnist_cnn_model.h5')
-
+#model = tf.keras.models.load_model('mnist_cnn_model.h5')
+model = tf.keras.models.load_model('mnist_cnn_model.h5', compile=False)
 def preprocess_canvas_image(image_data):
     img = Image.fromarray(image_data)
     img = img.convert('L')  # Преобразование в оттенки серого
