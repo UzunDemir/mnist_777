@@ -308,8 +308,8 @@ canvas_result = st_canvas(
 )
 
 # Отображаем нарисованное изображение
-if canvas_result.image_data is not None:
-    st.image(canvas_result.image_data)
+# if canvas_result.image_data is not None:
+#     st.image(canvas_result.image_data)
 
 # Загрузка предварительно обученной модели
 model = tf.keras.models.load_model('mnist_cnn_model.h5')
