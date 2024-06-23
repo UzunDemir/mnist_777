@@ -188,8 +188,8 @@ drawing_mode = "freedraw"
 stroke_width = 12
 stroke_color = "black"  # Устанавливаем черный цвет для контура
 bg_color = "white"  # Устанавливаем белый цвет фона
-bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
-realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
+#bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
+#realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
 
 # Создаем компонент квадратной канвы
 canvas_result = st_canvas(
