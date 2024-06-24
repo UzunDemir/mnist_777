@@ -8,8 +8,7 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-# Вставляем GIF с помощью HTML тега img
-st.markdown('<img src="https://media0.giphy.com/media/58OujxlE7e19Mjv0gj/200w.gif?cid=6c09b952re63arju0qshxx3q05ru87xc6e1feni1h4xlwx3x&ep=v1_gifs_search&rid=200w.gif&ct=g', unsafe_allow_html=True)
+st.markdown('<img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif" alt="some_text">', unsafe_allow_html=True)
 
 st.divider()
 
