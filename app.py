@@ -98,7 +98,9 @@ if model is not None:
 else:
     print("Failed to load the model.")
 
-
+# Вставляем иконку GitHub
+st.markdown('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
+            '<i class="fab fa-github"></i></a>', unsafe_allow_html=True)
 ##############################
 def preprocess_canvas_image(image_data):
     img = Image.fromarray(image_data)
