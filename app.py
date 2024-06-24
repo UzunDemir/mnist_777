@@ -115,7 +115,7 @@ def preprocess_canvas_image(image_data):
     normalized_image = inverted_image / 255.0  # Нормализация значений
     reshaped_image = normalized_image.reshape((1, 28, 28, 1))  # Изменение формы для модели CNN
 
-    st.write("Визуализация предобработки цифры")
+    st.write("                                  Визуализация предобработки цифры")
 
     # Отображение предобработанных изображений с помощью Matplotlib
     fig, ax = plt.subplots(nrows=2, ncols=3, figsize=(10, 6))
