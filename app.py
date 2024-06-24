@@ -41,6 +41,9 @@ st.markdown("""
         flex-direction: column;
         margin-top: 0vh;  /* отступ сверху */
     }
+    .github-icon:hover {
+        color: #4078c0; /* Изменение цвета при наведении */
+    }
     </style>
     <div class="center">
         <img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">
