@@ -8,7 +8,11 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-
+st.sidebar.write(
+        """
+                     The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems.
+                     """
+    )
 
 # Устанавливаем стиль для центрирования элементов
 st.markdown("""
