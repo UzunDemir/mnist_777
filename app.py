@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 st.sidebar.title("Описание")
 # Вставляем иконку GitHub
-st.sidebar('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
+st.sidebar.write('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
             '<i class="fab fa-github"></i></a>', unsafe_allow_html=True)
 st.sidebar.write("Now you can run MNIST yourself!")
 st.sidebar.divider()
@@ -44,7 +44,9 @@ st.markdown("""
         flex-direction: column;
         margin-top: 0vh;  /* отступ сверху */
     }
-    
+    .github-icon:hover {
+        color: #4078c0; /* Изменение цвета при наведении */
+    }
     </style>
     <div class="center">
         <img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">
