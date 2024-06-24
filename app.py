@@ -15,8 +15,11 @@ st.sidebar.write(
         """
                      Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
                      
-                     1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database) 
-                     Ноутбук с исследованиями можно посмотреть [здесь](https://github.com/UzunDemir/mnist_777/blob/main/RESEARCH%26MODEL/prepare_model.ipynb)
+                     1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database).
+                     Точность на тестовой выборке датасета должна быть не ниже 68%. Я использовал много разных моделей и остановил свой выбор на сверточной нейронной сети (Convolutional Neural Network, CNN)
+                     которая показала точность на тестовом наборе данных: 0.99.
+                     Ноутбук с исследованиями можно посмотреть [здесь.](https://github.com/UzunDemir/mnist_777/blob/main/RESEARCH%26MODEL/prepare_model.ipynb)
+                     2. Вторым шагом необходимо было обернуть готовую модель в сервис и запустить её как часть веб-приложения для распознавания самостоятельно написанных символов.
                      
                      """
     )
