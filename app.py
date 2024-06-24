@@ -10,19 +10,26 @@ import matplotlib.pyplot as plt
 
 import streamlit as st
 
-# Центрируем заголовок и текст
+import streamlit as st
+
+# Устанавливаем стиль для центрирования элементов
 st.markdown("""
     <style>
     .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         text-align: center;
+        flex-direction: column;
     }
     </style>
+    <div class="center">
+        <h1>Классификатор рукописных цифр</h1>
+        <p>Напишите одну цифру</p>
+    </div>
     """, unsafe_allow_html=True)
 
-st.markdown('<div class="center">', unsafe_allow_html=True)
-st.title('Классификатор рукописных цифр')
-st.write("Напишите одну цифру")
-st.markdown('</div>', unsafe_allow_html=True)
 
 
 # Streamlit App
