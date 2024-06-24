@@ -8,7 +8,7 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-st.sidebar.write("[Github](https://github.com/UzunDemir)     [Linkedin](https://www.linkedin.com/in/uzundemir/     [Uzun Demir](https://uzundemir.github.io/)")
+st.sidebar.write("[Github](https://github.com/UzunDemir)     [Linkedin](https://www.linkedin.com/in/uzundemir/)     [Uzun Demir](https://uzundemir.github.io/)")
 st.sidebar.title("Описание")
 st.sidebar.divider()
 st.sidebar.write(
