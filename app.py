@@ -18,7 +18,7 @@ st.markdown("""
         height: 1vh;
         text-align: center;
         flex-direction: column;
-        margin-top: 1vh;  /* отступ сверху */
+        margin-top: 10vh;  /* отступ сверху */
     }
     </style>
     <div class="center">
