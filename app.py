@@ -16,6 +16,7 @@ st.sidebar.write(
                      Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
                      
                      1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database) 
+                     Ноутбук с исследованиями можно посмотреть [здесь](https://github.com/UzunDemir/mnist_777/blob/main/RESEARCH%26MODEL/prepare_model.ipynb)
                      
                      """
     )
