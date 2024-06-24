@@ -8,6 +8,9 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+# Вставляем GIF с помощью HTML тега img
+st.markdown('<img src="https://dribbble.com/shots/2937858-Blink-Bot/attachments/9565674?mode=media" alt="some_text">', unsafe_allow_html=True)
+
 st.divider()
 
 # Устанавливаем стиль для центрирования элементов
