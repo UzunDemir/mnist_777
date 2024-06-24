@@ -9,7 +9,8 @@ from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
 # Streamlit App
-st.title('MNIST Digit Classifier')
+st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
+st.write("Напишите одну цифру")
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
