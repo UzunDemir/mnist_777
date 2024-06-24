@@ -313,7 +313,32 @@ canvas_result = st_canvas(
 
 # Загрузка предварительно обученной модели
 #model = tf.keras.models.load_model('mnist_cnn_model.h5')
-model = tf.keras.models.load_model('mnist_cnn_model.h5', compile=False)
+#model = tf.keras.models.load_model('mnist_cnn_model.h5', compile=False)
+
+# Функция для загрузки модели с дополнительными проверками
+def load_model_safe(model_path):
+    try:
+        with tf.keras.backend.name_scope('model_loading'):
+            model = tf.keras.models.load_model(model_path, compile=False)
+        return model
+    except IndexError as e:
+        print(f"IndexError: {e}. Возможно, стек областей видимости пуст.")
+        # Дополнительная обработка или попытка повторной загрузки модели
+        return None
+    except Exception as e:
+        print(f"Error loading the model: {e}")
+        return None
+
+# Попытка загрузки модели
+model = load_model_safe('mnist_cnn_model.h5')
+
+if model is not None:
+    print("Model loaded successfully.")
+else:
+    print("Failed to load the model.")
+
+
+##############################
 def preprocess_canvas_image(image_data):
     img = Image.fromarray(image_data)
     img = img.convert('L')  # Преобразование в оттенки серого
