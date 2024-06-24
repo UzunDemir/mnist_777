@@ -38,20 +38,46 @@ bg_color = "white"  # Устанавливаем белый цвет фона
 # bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
 # realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
 
-# Создаем компонент квадратной канвы
-canvas_result = st_canvas(
-    fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
-    stroke_width=stroke_width,
-    stroke_color=stroke_color,
-    background_color=bg_color,
-    #background_image=Image.open(bg_image) if bg_image else None,
-    # update_streamlit=realtime_update,
-    height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
-    width=150,
-    drawing_mode=drawing_mode,
-    key="canvas",
-)
+# # Создаем компонент квадратной канвы
+# canvas_result = st_canvas(
+#     fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
+#     stroke_width=stroke_width,
+#     stroke_color=stroke_color,
+#     background_color=bg_color,
+#     #background_image=Image.open(bg_image) if bg_image else None,
+#     # update_streamlit=realtime_update,
+#     height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
+#     width=150,
+#     drawing_mode=drawing_mode,
+#     key="canvas",
+# )
+# Настройки для канвы
+stroke_width = 10
+stroke_color = "black"
+bg_color = "white"
+drawing_mode = "freedraw"
 
+# Создаем две колонки
+col1, col2 = st.columns([1, 1])
+
+# В первой колонке создаем компонент квадратной канвы
+with col1:
+    canvas_result = st_canvas(
+        fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
+        stroke_width=stroke_width,
+        stroke_color=stroke_color,
+        background_color=bg_color,
+        height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
+        width=150,
+        drawing_mode=drawing_mode,
+        key="canvas",
+    )
+
+# Во второй колонке выводим предсказанную цифру
+with col2:
+    # Пример предсказанной цифры (замените на ваш результат)
+    predicted_class = 7
+    st.success(f'Предсказанная цифра: {predicted_class}')
 # Отображаем нарисованное изображение
 # if canvas_result.image_data is not None:
 #     st.image(canvas_result.image_data)
@@ -140,7 +166,7 @@ if st.button('Классифицировать нарисованную цифр
         result = model.predict(img_array)
         predicted_class = np.argmax(result)
     
-        st.success(f'Предсказанная цифра: {predicted_class}')
+        #st.success(f'Предсказанная цифра: {predicted_class}')
          
     except Exception as e:
         st.error(f'Ошибка: {e}')
