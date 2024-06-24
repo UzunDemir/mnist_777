@@ -26,31 +26,29 @@ st.markdown("""
         <p>Напишите одну цифру</p>
     </div>
     """, unsafe_allow_html=True)
-# Streamlit App
-# st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
-# st.write("Напишите одну цифру")
 
-# Задаем параметры холста
-drawing_mode = "freedraw"
-stroke_width = 14
-stroke_color = "black"  # Устанавливаем черный цвет для контура
-bg_color = "white"  # Устанавливаем белый цвет фона
-# bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
-# realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
 
-# # Создаем компонент квадратной канвы
-# canvas_result = st_canvas(
-#     fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
-#     stroke_width=stroke_width,
-#     stroke_color=stroke_color,
-#     background_color=bg_color,
-#     #background_image=Image.open(bg_image) if bg_image else None,
-#     # update_streamlit=realtime_update,
-#     height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
-#     width=150,
-#     drawing_mode=drawing_mode,
-#     key="canvas",
-# )
+# # Задаем параметры холста
+# drawing_mode = "freedraw"
+# stroke_width = 14
+# stroke_color = "black"  # Устанавливаем черный цвет для контура
+# bg_color = "white"  # Устанавливаем белый цвет фона
+# # bg_image = st.sidebar.file_uploader("Фоновое изображение:", type=["png", "jpg"])
+# # realtime_update = st.sidebar.checkbox("Обновление в реальном времени", True)
+
+# # # Создаем компонент квадратной канвы
+# # canvas_result = st_canvas(
+# #     fill_color="rgba(255, 165, 0, 0.3)",  # Цвет заливки с некоторой прозрачностью
+# #     stroke_width=stroke_width,
+# #     stroke_color=stroke_color,
+# #     background_color=bg_color,
+# #     #background_image=Image.open(bg_image) if bg_image else None,
+# #     # update_streamlit=realtime_update,
+# #     height=150,  # Установим высоту и ширину канвы одинаковыми (в пикселях)
+# #     width=150,
+# #     drawing_mode=drawing_mode,
+# #     key="canvas",
+# # )
 # Настройки для канвы
 stroke_width = 10
 stroke_color = "black"
