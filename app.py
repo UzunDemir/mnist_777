@@ -9,6 +9,9 @@ from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
 st.sidebar.title("Описание")
+# Вставляем иконку GitHub
+st.sidebar('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
+            '<i class="fab fa-github"></i></a>', unsafe_allow_html=True)
 st.sidebar.write("Now you can run MNIST yourself!")
 st.sidebar.divider()
 st.sidebar.write(
@@ -98,9 +101,7 @@ if model is not None:
 else:
     print("Failed to load the model.")
 
-# Вставляем иконку GitHub
-st.markdown('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
-            '<i class="fab fa-github"></i></a>', unsafe_allow_html=True)
+
 ##############################
 def preprocess_canvas_image(image_data):
     img = Image.fromarray(image_data)
