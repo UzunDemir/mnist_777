@@ -8,12 +8,15 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-st.sidebar.title("MNIST Handwritten Digit Prediction")
+st.sidebar.title("Описание")
 st.sidebar.write("Now you can run MNIST yourself!")
 st.sidebar.divider()
 st.sidebar.write(
         """
-                     The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems.
+                     Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
+                     
+                     1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database) 
+                     
                      """
     )
 
