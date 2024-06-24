@@ -15,10 +15,10 @@ st.markdown("""
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10vh;
+        height: 1vh;
         text-align: center;
         flex-direction: column;
-        margin-top: 10vh;  /* отступ сверху */
+        margin-top: 1vh;  /* отступ сверху */
     }
     </style>
     <div class="center">
