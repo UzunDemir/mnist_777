@@ -8,6 +8,18 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+# Устанавливаем стиль для центрирования элементов
+st.markdown("""
+    <style>
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        / height: 100vh;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 st.markdown('<img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">', unsafe_allow_html=True)
 
 st.divider()
