@@ -8,7 +8,7 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-st.markdown('<img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif" alt="some_text">', unsafe_allow_html=True)
+st.markdown('<img src="https://media0.giphy.com/media/58OujxlE7e19Mjv0gj/200w.gif">', unsafe_allow_html=True)
 
 st.divider()
 
