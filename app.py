@@ -140,13 +140,8 @@ if st.button('Классифицировать нарисованную цифр
         result = model.predict(img_array)
         predicted_class = np.argmax(result)
     
-        #st.success(f'Предсказанная цифра: {predicted_class}')
-                # Создаем три колонки для размещения элементов
-        col1, col2, col3 = st.columns(3)
-        
-        # Используем центральную колонку для отображения сообщения об успехе
-        with col2:
         st.success(f'Предсказанная цифра: {predicted_class}')
+         
     except Exception as e:
         st.error(f'Ошибка: {e}')
 
