@@ -44,7 +44,7 @@ st.markdown("""
     <div class="center">
         <img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">
         <h1>Классификатор рукописных цифр</h1>
-        <p>Напишите одну цифру</p>
+        <p>Напишите (пока) только одну цифру!</p>
     </div>
     """, unsafe_allow_html=True)
 st.divider()
