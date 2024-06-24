@@ -8,11 +8,8 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+st.sidebar.write("[Github](https://github.com/UzunDemir) [Linkedin](https://www.linkedin.com/in/uzundemir/)")
 st.sidebar.title("Описание")
-# Вставляем иконку GitHub
-st.sidebar.write('<a href="https://github.com/UzunDemir" target="_blank" class="github-icon social-icon">'
-            '<i class="fab fa-github"></i></a>', unsafe_allow_html=True)
-st.sidebar.write("Now you can run MNIST yourself!")
 st.sidebar.divider()
 st.sidebar.write(
         """
