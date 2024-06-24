@@ -23,7 +23,7 @@ st.markdown("""
     </style>
     <div class="center">
         <h1>Классификатор рукописных цифр</h1>
-        <h2>Напишите одну цифру</p>
+        <p>Напишите одну цифру</p>
     </div>
     """, unsafe_allow_html=True)
 # Streamlit App
