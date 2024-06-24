@@ -26,7 +26,7 @@ st.markdown("""
         <p>Напишите одну цифру</p>
     </div>
     """, unsafe_allow_html=True)
-
+st.divider()
 # Настройки для канвы
 stroke_width = 10
 stroke_color = "black"
