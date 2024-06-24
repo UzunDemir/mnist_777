@@ -8,20 +8,15 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-import streamlit as st
-
-import streamlit as st
-
 # Устанавливаем стиль для центрирования элементов
 st.markdown("""
     <style>
     .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
-        flex-direction: column;
     }
     </style>
     <div class="center">
@@ -29,8 +24,6 @@ st.markdown("""
         <p>Напишите одну цифру</p>
     </div>
     """, unsafe_allow_html=True)
-
-
 
 # Streamlit App
 # st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
