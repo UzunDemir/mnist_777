@@ -24,7 +24,7 @@ st.markdown("""
     }
     </style>
     <div class="center">
-        st.markdown('<img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">')
+        <img src="https://github.com/UzunDemir/mnist_777/blob/main/200w.gif?raw=true">
 
         st.divider()
         <h1>Классификатор рукописных цифр</h1>
