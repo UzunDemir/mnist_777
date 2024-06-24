@@ -15,7 +15,7 @@ st.markdown("""
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        / height: 100vh;
+        height: 100vh;
     }
     </style>
     """, unsafe_allow_html=True)
