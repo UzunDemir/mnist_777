@@ -12,11 +12,12 @@ import matplotlib.pyplot as plt
 st.markdown("""
     <style>
     .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         text-align: center;
+        flex-direction: column;
     }
     </style>
     <div class="center">
@@ -24,7 +25,6 @@ st.markdown("""
         <p>Напишите одну цифру</p>
     </div>
     """, unsafe_allow_html=True)
-
 # Streamlit App
 # st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
 # st.write("Напишите одну цифру")
