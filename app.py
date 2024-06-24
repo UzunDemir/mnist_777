@@ -73,11 +73,7 @@ with col1:
         key="canvas",
     )
 
-# Во второй колонке выводим предсказанную цифру
-with col2:
-    # Пример предсказанной цифры (замените на ваш результат)
-    #predicted_class = 7
-    st.success(f'Предсказанная цифра: {predicted_class}')
+
 # Отображаем нарисованное изображение
 # if canvas_result.image_data is not None:
 #     st.image(canvas_result.image_data)
@@ -167,7 +163,11 @@ if st.button('Классифицировать нарисованную цифр
         predicted_class = np.argmax(result)
     
         #st.success(f'Предсказанная цифра: {predicted_class}')
-         
+                # Во второй колонке выводим предсказанную цифру
+        with col2:
+            # Пример предсказанной цифры (замените на ваш результат)
+            #predicted_class = 7
+            st.success(f'Предсказанная цифра: {predicted_class}') 
     except Exception as e:
         st.error(f'Ошибка: {e}')
 
