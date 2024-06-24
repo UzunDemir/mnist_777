@@ -34,8 +34,8 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 
 # Streamlit App
-st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
-st.write("Напишите одну цифру")
+# st.title('Классификатор рукописных цифр') #MNIST Digit Classifier
+# st.write("Напишите одну цифру")
 
 # Задаем параметры холста
 drawing_mode = "freedraw"
