@@ -8,6 +8,9 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+# Streamlit App
+st.title('MNIST Digit Classifier')
+
 # Задаем параметры холста
 drawing_mode = "freedraw"
 stroke_width = 14
@@ -107,8 +110,7 @@ def preprocess_canvas_image(image_data):
 
     return reshaped_image
 
-# Streamlit App
-st.title('MNIST Digit Classifier')
+
 
 if st.button('Классифицировать нарисованную цифру'):
     try:
