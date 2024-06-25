@@ -1,4 +1,6 @@
-# Эта [приложка](https://mnist777.streamlit.app/) выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
+## Эта [приложка](https://mnist777.streamlit.app/) выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
+
+
 
 1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database).
 Точность на тестовой выборке датасета должна быть не ниже 68%. Я использовал много разных моделей и остановил свой выбор на сверточной нейронной сети (Convolutional Neural Network, CNN) которая показала точность на тестовом наборе данных: 0.99.
