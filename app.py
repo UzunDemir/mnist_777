@@ -11,12 +11,12 @@ import matplotlib.pyplot as plt
 st.sidebar.write("[Uzun Demir](https://uzundemir.github.io/)") #[Github](https://github.com/UzunDemir)     [Linkedin](https://www.linkedin.com/in/uzundemir/)     
 st.sidebar.write("[Github](https://github.com/UzunDemir)")
 st.sidebar.write("[Linkedin](https://www.linkedin.com/in/uzundemir/)")
-st.sidebar.title("Описание")
+st.sidebar.title("Описание проекта")
+st.sidebar.title("Handwritten Digits Classifier MNIST")
 st.sidebar.divider()
 st.sidebar.write(
         """
-                     <h1 style="color:blue;">Handwritten Digits Classifier MNIST</h1>
-                     
+                                       
                      Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
                      
                      1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database).
