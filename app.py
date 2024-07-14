@@ -15,7 +15,7 @@ st.sidebar.title("Описание")
 st.sidebar.divider()
 st.sidebar.write(
         """
-                     <h1>Handwritten digits classifier MNIST<h1>
+                     <h1 style="color:blue;">Handwritten Digits Classifier MNIST</h1>
                      
                      Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
                      
