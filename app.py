@@ -8,6 +8,15 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
+# CSS стиль для скрытия иконки GitHub
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+
+# Отображение CSS стиля на странице Streamlit
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 
 st.sidebar.write("[Uzun Demir](https://uzundemir.github.io/)") #[Github](https://github.com/UzunDemir)     [Linkedin](https://www.linkedin.com/in/uzundemir/)     
