@@ -1,11 +1,11 @@
 # Handwritten Digit Recognition
 
-1. Initially, I trained a handwritten digit recognition model based on the MNIST (Modified National Institute of Standards and Technology) database. The accuracy on the test dataset needed to be at least 68%. I tried various models and finally chose a Convolutional Neural Network (CNN), which achieved a test accuracy of 0.99. You can view the notebook with the research [here](link-to-notebook).
+1. Initially, I trained a handwritten digit recognition model based on the MNIST (Modified National Institute of Standards and Technology) database. The accuracy on the test dataset needed to be at least 68%. I tried various models and finally chose a Convolutional Neural Network (CNN), which achieved a test accuracy of 0.99. You can view the notebook with the research [here]([link-to-notebook](https://github.com/UzunDemir/mnist_777/blob/main/RESEARCH%26MODEL/prepare_model.ipynb)).
 
 2. The second step was to wrap the trained model into a service and deploy it as part of a web application for recognizing handwritten digits. After that, I needed to create a Docker image and run the application in a Docker container.
 
 3. I decided to build a full-fledged application that uploads an image of a digit and predicts it. Being a perfectionist, I thought: what if I could draw the digit myself and let the model predict it? After some research, I decided to use Streamlit to implement this idea. [Here's](https://mnist777.streamlit.app/) what I came up with!
-4. 
+
 ## Эта [приложка](https://mnist777.streamlit.app/) выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
 
 ![200w](https://github.com/UzunDemir/mnist_777/assets/94790150/09956e06-04b2-43fb-9eac-993f1201db74)
