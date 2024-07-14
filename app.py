@@ -8,14 +8,18 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
 
-# Добавление пользовательского CSS стиля для скрытия иконки GitHub
-hide_github_icon = """
-<style>
-#MainMenu > div.css-1gq8v02.e5i1odf4 > div > div > div.css-jj9ih9 {
-    display: none;
-}
-</style>
-"""
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Отображение CSS стиля на странице Streamlit
 st.markdown(hide_github_icon, unsafe_allow_html=True)
