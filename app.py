@@ -15,7 +15,8 @@ st.sidebar.title("Описание")
 st.sidebar.divider()
 st.sidebar.write(
         """
-                     Handwritten digits classifier MNIST
+                     <h1>Handwritten digits classifier MNIST<h1>
+                     
                      Эта приложка выполнена в рамках практической работы по модулю Computer Vision курса Machine Learning Advanced от Skillbox.
                      
                      1. Вначале была обучена модель распознавания рукописных цифр на базе MNIST (Modified National Institute of Standards and Technology database).
