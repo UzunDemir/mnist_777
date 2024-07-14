@@ -21,9 +21,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Отображение CSS стиля на странице Streamlit
-st.markdown(hide_github_icon, unsafe_allow_html=True)
-
 
 st.sidebar.write("[Uzun Demir](https://uzundemir.github.io/)") #[Github](https://github.com/UzunDemir)     [Linkedin](https://www.linkedin.com/in/uzundemir/)     
 st.sidebar.write("[Github](https://github.com/UzunDemir)")
